@@ -1,0 +1,6 @@
+commit: HEAD
+process_files: [StardosStencil-Regular.ttf.ttx, StardosStencil-Bold.ttf.ttx, src/StardosStencil-Regular-TTF.sfd,
+  src/StardosStencil-Bold-TTF.sfd]
+pyftsubset: --notdef-outline --name-IDs=* --hinting
+subset: [latin]
+ttfautohint: -l 7 -r 28 -G 50 -x 13 -w "G"

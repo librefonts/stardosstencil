@@ -1,0 +1,510 @@
+Project:
+  error: []
+  failure:
+  - autofix: false
+    err_msg: File `FONTLOG.txt` does not exist in root of upstream repository
+    methodDoc: Repository does contain FONTLOG.txt file
+    methodName: test_fontlog_txt_exists
+    name: bakery_lint.tests.upstream.test_check_upstream_sources
+    tags: [note]
+    targets: &id003 [upstream-repo]
+    tool: FontBakery
+  fixed: []
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that diacritic glyph are made completely with composite
+    methodName: test_diacritic_made_as_component
+    name: bakery_lint.tests.upstream.test_diacritic
+    tags: [note]
+    targets: &id001 [upstream-repo]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that diacritic glyph are made completely with mark method
+    methodName: test_diacritic_made_as_mark_to_mark
+    name: bakery_lint.tests.upstream.test_diacritic
+    tags: [note]
+    targets: *id001
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that diacritic glyph are made completely with flat method
+    methodName: test_diacritic_made_as_own_glyphs
+    name: bakery_lint.tests.upstream.test_diacritic
+    tags: [note]
+    targets: *id001
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that glyphs has same number of contours across family
+    methodName: test_font_prepolation_glyph_contours
+    name: bakery_lint.tests.upstream.test_prepolation
+    tags: [note]
+    targets: &id002 [upstream-repo]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that glyphs has same number of points across family
+    methodName: test_font_prepolation_glyph_points
+    name: bakery_lint.tests.upstream.test_prepolation
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check glyph names are all the same across family
+    methodName: test_font_test_prepolation_glyph_names
+    name: bakery_lint.tests.upstream.test_prepolation
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Repository does contain bakery.yaml configuration file
+    methodName: test_bakery_yaml_exists
+    name: bakery_lint.tests.upstream.test_check_upstream_sources
+    tags: [note]
+    targets: *id003
+    tool: FontBakery
+  - autofix: false
+    err_msg: ''
+    methodDoc: Are all copyright notices the same in all styles?
+    methodName: test_copyright_notices_same_across_family
+    name: bakery_lint.tests.upstream.test_check_upstream_sources
+    tags: [note]
+    targets: *id003
+    tool: FontBakery
+  - autofix: false
+    err_msg: ''
+    methodDoc: Repository does containDESCRIPTION.en_us.html file
+    methodName: test_description_html_exists
+    name: bakery_lint.tests.upstream.test_check_upstream_sources
+    tags: [note]
+    targets: *id003
+    tool: FontBakery
+  - autofix: false
+    err_msg: ''
+    methodDoc: Repository does contain METADATA.json file
+    methodName: test_metadata_json_exists
+    name: bakery_lint.tests.upstream.test_check_upstream_sources
+    tags: [note]
+    targets: *id003
+    tool: FontBakery
+StardosStencil-Bold-TTF.sfd:
+  error:
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: A Unicode value should appear only once per font
+    methodName: testUnicodeValue
+    name: bakery_lint.tests.upstream.test_unicode_value_should_appear_only_once_per_font
+    tags: &id010 [note]
+    targets: &id011 [upstream]
+    tool: lint
+  - autofix: true
+    err_msg: Not a TrueType or OpenType font (bad sfntVersion)
+    methodDoc: Source TTF Font filename equals family style
+    methodName: test_source_ttf_font_filename_equals_familystyle
+    name: bakery_lint.tests.upstream.test_font_filename_eq_familystyle
+    tags: &id006 [note]
+    targets: &id007 [upstream, upstream-ttx]
+    tool: lint
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: '''ascii'' codec can''t encode character u''\u20b9'' in position 35:
+      ordinal not in range(128)'
+    methodName: test_has_rupee
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id012 [note]
+    targets: &id004 [upstream]
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Does this font have a glyph named 'A'?
+    methodName: test_is_A
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id013 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Is this font's property A an instance of an RGlyph object?
+    methodName: test_is_A_a_glyph_instance
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id014 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Does this font file's name end with '.ufo'?
+    methodName: test_is_ended_ufo
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id015 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Is this UFO really a folder?
+    methodName: test_is_folder
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id016 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Is the OS/2 table fsType set to 0?
+    methodName: test_is_fsType_eq_1
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id017 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: Does this UFO path exist?
+    methodName: test_it_exists
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: &id018 [note]
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Bold-TTF.sfd.
+      This file is required.
+    methodDoc: In font there shouldn't be too many overlapping contours
+    methodName: test_contour_count
+    name: bakery_lint.tests.upstream.test_contour_count
+    tags: &id019 [note]
+    targets: &id020 [upstream]
+    tool: lint
+  failure: []
+  fixed: []
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_familyname_less_than_32_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id021 [note]
+    targets: &id005 [upstream]
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_fullfontname_less_than_64_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id022 [note]
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_postscriptname_consistof_allowed_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id023 [note]
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_postscriptname_less_than_30_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id024 [note]
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_stylename_less_than_32_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id025 [note]
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_weight_value_range_between_250_and_900
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: &id026 [note]
+    targets: *id005
+    tool: FontForge
+StardosStencil-Bold.ttf.ttx:
+  error: []
+  failure:
+  - autofix: false
+    err_msg: '''EPAR'' not found in [''GlyphOrder'', ''head'', ''hhea'', ''maxp'',
+      ''OS/2'', ''hmtx'', ''cmap'', ''prep'', ''loca'', ''glyf'', ''kern'', ''name'',
+      ''post'', ''gasp'', ''FFTM'']'
+    methodDoc: Check If font has EPAR table
+    methodName: test_epar_in_keys
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: &id027 [note]
+    targets: &id009 [upstream-ttx]
+    tool: fontTools
+  - autofix: false
+    err_msg: 'Glyph ".null" does not comply conventions. A glyph name may be up to
+      31 characters in length, must be entirely comprised of characters from the following
+      set: A-Z a-z 0-9 .(period) _(underscore). and must not start with a digit or
+      period. The only exception is the special character ".notdef". "twocents", "a1",
+      and "_" are valid glyph names. "2cents" and ".twocents" are not.'
+    methodDoc: GlyphName length < 30 and does contain allowed chars only
+    methodName: test_glyphname_does_not_contain_disallowed_chars
+    name: bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars
+    tags: &id028 [note]
+    targets: &id029 [upstream-ttx]
+    tool: lint
+  fixed:
+  - &id008
+    autofix: true
+    err_msg: '''StardosStencil-Bold.ttf'' != ''StardosStencil-Bold'''
+    methodDoc: Source TTF Font filename equals family style
+    methodName: test_source_ttf_font_filename_equals_familystyle
+    name: bakery_lint.tests.upstream.test_font_filename_eq_familystyle
+    tags: *id006
+    targets: *id007
+    tool: lint
+  - *id008
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: This very important test checking if OS/2 is in keys method
+    methodName: test_os2_in_keys
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: &id031 [note]
+    targets: *id009
+    tool: fontTools
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font doesnt contain duplicated glyphs. When fontbakery has resulted
+      files with GlyphID <glyphname>#<int> generated, It can't be installed on some
+      Mac OS X. For details see https://github.com/girish-dalvi/Ek-Mukta/issues/1
+    methodName: test_ttx_doesnt_contain_duplicate_glyphs
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: &id032 [note]
+    targets: *id009
+    tool: fontTools
+  - autofix: false
+    err_msg: ''
+    methodDoc: The font corresponds the font family naming recommendation. See http://forum.fontlab.com/index.php?topic=313.0
+    methodName: test_ttx_family_naming_recommendation
+    name: bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations
+    tags: &id033 [note]
+    targets: &id034 [upstream-ttx]
+    tool: TTFont
+StardosStencil-Regular-TTF.sfd:
+  error:
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: A Unicode value should appear only once per font
+    methodName: testUnicodeValue
+    name: bakery_lint.tests.upstream.test_unicode_value_should_appear_only_once_per_font
+    tags: *id010
+    targets: *id011
+    tool: lint
+  - autofix: true
+    err_msg: Not a TrueType or OpenType font (bad sfntVersion)
+    methodDoc: Source TTF Font filename equals family style
+    methodName: test_source_ttf_font_filename_equals_familystyle
+    name: bakery_lint.tests.upstream.test_font_filename_eq_familystyle
+    tags: *id006
+    targets: *id007
+    tool: lint
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: '''ascii'' codec can''t encode character u''\u20b9'' in position 35:
+      ordinal not in range(128)'
+    methodName: test_has_rupee
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id012
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Does this font have a glyph named 'A'?
+    methodName: test_is_A
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id013
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Is this font's property A an instance of an RGlyph object?
+    methodName: test_is_A_a_glyph_instance
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id014
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Does this font file's name end with '.ufo'?
+    methodName: test_is_ended_ufo
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id015
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Is this UFO really a folder?
+    methodName: test_is_folder
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id016
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Is the OS/2 table fsType set to 0?
+    methodName: test_is_fsType_eq_1
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id017
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: Does this UFO path exist?
+    methodName: test_it_exists
+    name: bakery_lint.tests.upstream.test_check_ufo_requirements
+    tags: *id018
+    targets: *id004
+    tool: Robofab
+  - autofix: false
+    err_msg: metainfo.plist is missing in /home/travis/build/fontdirectory/stardosstencil/builds/build/sources/StardosStencil-Regular-TTF.sfd.
+      This file is required.
+    methodDoc: In font there shouldn't be too many overlapping contours
+    methodName: test_contour_count
+    name: bakery_lint.tests.upstream.test_contour_count
+    tags: *id019
+    targets: *id020
+    tool: lint
+  failure: []
+  fixed: []
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_familyname_less_than_32_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id021
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_fullfontname_less_than_64_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id022
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_postscriptname_consistof_allowed_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id023
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_postscriptname_less_than_30_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id024
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_stylename_less_than_32_chars
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id025
+    targets: *id005
+    tool: FontForge
+  - autofix: false
+    err_msg: ''
+    methodDoc: None
+    methodName: test_weight_value_range_between_250_and_900
+    name: bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations
+    tags: *id026
+    targets: *id005
+    tool: FontForge
+StardosStencil-Regular.ttf.ttx:
+  error: []
+  failure:
+  - autofix: false
+    err_msg: '''EPAR'' not found in [''GlyphOrder'', ''head'', ''hhea'', ''maxp'',
+      ''OS/2'', ''hmtx'', ''cmap'', ''fpgm'', ''prep'', ''cvt '', ''loca'', ''glyf'',
+      ''kern'', ''name'', ''post'', ''gasp'', ''FFTM'']'
+    methodDoc: Check If font has EPAR table
+    methodName: test_epar_in_keys
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: *id027
+    targets: *id009
+    tool: fontTools
+  - autofix: false
+    err_msg: 'Glyph ".null" does not comply conventions. A glyph name may be up to
+      31 characters in length, must be entirely comprised of characters from the following
+      set: A-Z a-z 0-9 .(period) _(underscore). and must not start with a digit or
+      period. The only exception is the special character ".notdef". "twocents", "a1",
+      and "_" are valid glyph names. "2cents" and ".twocents" are not.'
+    methodDoc: GlyphName length < 30 and does contain allowed chars only
+    methodName: test_glyphname_does_not_contain_disallowed_chars
+    name: bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars
+    tags: *id028
+    targets: *id029
+    tool: lint
+  fixed:
+  - &id030
+    autofix: true
+    err_msg: '''StardosStencil-Regular.ttf'' != ''StardosStencil-Regular'''
+    methodDoc: Source TTF Font filename equals family style
+    methodName: test_source_ttf_font_filename_equals_familystyle
+    name: bakery_lint.tests.upstream.test_font_filename_eq_familystyle
+    tags: *id006
+    targets: *id007
+    tool: lint
+  - *id030
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: This very important test checking if OS/2 is in keys method
+    methodName: test_os2_in_keys
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: *id031
+    targets: *id009
+    tool: fontTools
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font doesnt contain duplicated glyphs. When fontbakery has resulted
+      files with GlyphID <glyphname>#<int> generated, It can't be installed on some
+      Mac OS X. For details see https://github.com/girish-dalvi/Ek-Mukta/issues/1
+    methodName: test_ttx_doesnt_contain_duplicate_glyphs
+    name: bakery_lint.tests.upstream.test_check_ttx_requirements
+    tags: *id032
+    targets: *id009
+    tool: fontTools
+  - autofix: false
+    err_msg: ''
+    methodDoc: The font corresponds the font family naming recommendation. See http://forum.fontlab.com/index.php?topic=313.0
+    methodName: test_ttx_family_naming_recommendation
+    name: bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations
+    tags: *id033
+    targets: *id034
+    tool: TTFont
